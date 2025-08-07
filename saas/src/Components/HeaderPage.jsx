@@ -1,3 +1,12 @@
+import FeatureGrid from "./FeatureGrid";
+import KeyFeatures from "./KeyFeatures";
+
+
 export default function HeaderPage() {
-  return <>Hello</>;
+  return (
+    <>
+      <KeyFeatures />
+      <FeatureGrid/>
+    </>
+  );
 }
