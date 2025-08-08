@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./Components/RootLayout";
 import HeaderPage from "./Components/HeaderPage";
+import Navbar from "./Components/Navbar"
 import "./App.css";
 export default function App() {
   const router = createBrowserRouter([
@@ -9,9 +10,13 @@ export default function App() {
       element: <RootLayout />,
       children: [
         {
-          path: "/",
+          path: "/HeaderPage",
           element: <HeaderPage />,
         },
+        {
+          path: "/Navbar",
+          element: <Navbar />,
+        }
       ],
     },
   ]);
