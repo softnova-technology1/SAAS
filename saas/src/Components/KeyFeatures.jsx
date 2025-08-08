@@ -5,28 +5,24 @@ import { FaBolt, FaShieldAlt, FaUsers, FaChartLine } from 'react-icons/fa';
 const featuresData = [
   {
     icon: <FaBolt className={`${styles.icon} ${styles.blue}`} />,
-    metric: "10x faster",
     metricSub: "SPEED INCREASE",
     title: "Lightning Workflows",
     description: "Supercharge your daily operations with automation that not only saves time, but intelligently adapts to your evolving business routines..",
   },
   {
     icon: <FaShieldAlt className={`${styles.icon} ${styles.red}`} />,
-    metric: "99.9%",
     metricSub: "UPTIME",
     title: "Adaptive Safeguards",
     description: "Protect your data and streamline processes with real-time AI security, adapting instantly to threats and keeping your operations resilient and confidential.",
   },
   {
     icon: <FaUsers className={`${styles.icon} ${styles.green}`} />,
-    metric: "10k+",
     metricSub: "ACTIVE USERS",
     title: "Smart Team Sync",
     description: "Let AI handle the chaos of calendars and meetings—Smart Team Sync coordinates, schedules, and adapts to your team’s needs, so you can focus on what matters most.",
   },
   {
     icon: <FaChartLine className={`${styles.icon} ${styles.orange}`} />,
-    metric: "25%",
     metricSub: "GROWTH BOOST",
     title: "Predictive Insights",
     description: "Reveal hidden trends and forecast outcomes with analytics that learn from your unique data, giving you a competitive edge and actionable clarity.",
@@ -45,7 +41,6 @@ const KeyFeatures = () => {
         {featuresData.map((feature, index) => (
           <div key={index} className={styles.featureCard}>
             {feature.icon}
-            <div className={styles.metric}>{feature.metric}</div>
             <div className={styles.metricSub}>{feature.metricSub}</div>
             <h3 className={styles.featureTitle}>{feature.title}</h3>
             <p className={styles.featureDesc}>{feature.description}</p>

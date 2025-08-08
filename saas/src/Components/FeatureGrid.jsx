@@ -13,9 +13,6 @@ import {
   FaHeadset,
   FaFileAlt,
   FaThLarge,
-  FaMoon,
-  FaTools,
-  FaSyncAlt,
 } from 'react-icons/fa';
 
 const features = [
