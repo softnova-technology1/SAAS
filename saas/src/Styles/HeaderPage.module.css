@@ -184,5 +184,8 @@ p {
   .title{
     font-size: 28px;
   }
+  .circleBg{
+    scale: 1.4;
+  }
  
 }

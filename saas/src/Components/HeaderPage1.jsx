@@ -2,10 +2,10 @@
 import React from 'react';
 import styles from "../../src/Styles/HeaderPage.module.css";
 import phoneImg from '../Image/imgbg.png';
-import Navbar from "../Components/Navbar";
+import Navbar from "./Navbar";
 import circleBg from '../Image/bg.png';
-import MarqueeDemo from "../Components/Testimonal";
-import Mslick from "../Components/Mslick"
+import MarqueeDemo from "./Testimonal";
+import Mslick from "./Mslick"
 const Hero = () => {
   return (
     <>

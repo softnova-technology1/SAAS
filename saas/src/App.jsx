@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./Components/RootLayout";
-import HeaderPage from "./Components/HeaderPage";
+import Hero from "./Components/HeaderPage1";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 export default function App() {
@@ -10,8 +10,8 @@ export default function App() {
       element: <RootLayout />,
       children: [
         {
-          path: "/HeaderPage",
-          element: <HeaderPage />,
+          path: "/Hero",
+          element: <Hero />,
         }
       ],
     },
