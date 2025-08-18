@@ -29,7 +29,7 @@ const menuItems = [
   },
 ];
 const Navbar = () => {
-
+ const [menuOpen, setMenuOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(null);
   const menuRef = useRef(null);
   const handleDropdown = (menu) => {
@@ -83,8 +83,32 @@ const Navbar = () => {
         <button className={styles.cta}>Get Started →</button>
       </div>
     </header>
+    <header className={styles.header} >
+      <div className={styles.logo}>
+        <div className={styles.logoIcon}>S</div>
+        <span className={styles.logoText}>softNova</span>
+      </div>
+
+      <div
+        className={styles.hamburger}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        &#9776;
+      </div>
+
+      <nav className={`${styles.mobileMenu} ${menuOpen ? styles.show : ""}`}>
+        <ul>
+          <li>Home <span>+</span></li>
+          <li>Pages <span>+</span></li>
+          <li>Project <span>+</span></li>
+          <li>Services <span>+</span></li>
+          <li>Blog <span>+</span></li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </header>
    </>
   );
 };
 
-export default Navbar;
+export default Navbar
