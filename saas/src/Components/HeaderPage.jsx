@@ -35,7 +35,7 @@ const Hero = () => {
               <img src="https://i.pravatar.cc/40?img=5" alt="user3" className={styles.avatar} />
               <span className={styles.rate}><p>2,291 <br />HappyCustomers</p></span>
             </div>
-             <div className={styles.rightline}>
+            <div className={styles.rightline}>
             </div>
             <div>
               <p>⭐⭐⭐⭐☆ <span>4.8/5 Rating</span></p>
@@ -48,8 +48,8 @@ const Hero = () => {
           <img src={phoneImg} alt="phone" className={styles.phoneImg} />
         </div>
       </div>
-       <Mslick/>
-      <MarqueeDemo/>
+      <Mslick />
+      <MarqueeDemo />
     </>
   );
 };
