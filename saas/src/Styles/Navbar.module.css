@@ -40,8 +40,6 @@
 .dropdown {
   position: relative;
 }
-
-/* Always hidden until shown via JSX */
 .dropdownContent {
   position: absolute;
   top: 40px;
@@ -69,7 +67,7 @@
 .logoArea {
   display: flex;
   align-items: center;
-  gap: 10px;
+  
 }
 
 .logo {
@@ -167,4 +165,76 @@ a{
 
 .cta:hover {
   background-color: #6520ff;
+}
+
+/* Large desktops (above 1200px) */
+@media screen and (min-width: 1200px) {
+  .menu {
+    gap: 35px;
+  }
+}
+
+/* Tablets & small desktops (between 768px and 1199px) */
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+
+  .menu {
+    gap: 15px;
+  }
+
+  .dropdownContent {
+    top: 35px;
+    min-width: 130px;
+  }
+
+  .logoText {
+    font-size: 20px;
+  }
+
+  .cta {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+}
+
+
+
+@media screen and (max-width: 767px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 5%;
+  }
+
+ 
+
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+
+  .dropdownContent {
+   position: relative;
+        top: 0;
+        border-radius: 0;
+        padding-left: 10px;
+  }
+
+  .dropdownContent div {
+    padding: 8px 0;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+
+  .cta {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
 }

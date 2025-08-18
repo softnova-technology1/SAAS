@@ -227,7 +227,6 @@ p {
 .rightImage {
   position: relative;
   width: 50%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -246,4 +245,30 @@ p {
   position: relative;
   width: 600px;
   scale: 1;
+}
+@media (max-width: 768px) {
+  .circleBg{
+    display: none !important;
+  }
+  .hero {
+    display: block !important;
+    height: 100vh !important;
+    padding: 25px 10px !important;
+  }
+  .subBadge{
+    padding: 0px !important;
+  }
+   .leftContent {
+    max-width: 100% !important;
+  }
+  .title{
+    font-size: 28px;
+  }
+  .phoneImg{
+    scale: 2;
+    width: 100%;
+  }
+  .rightImage{
+    display: none !important;
+  }
 }

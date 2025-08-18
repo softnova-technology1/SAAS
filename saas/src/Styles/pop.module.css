@@ -1,0 +1,218 @@
+
+.main {
+  font-family: sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.herosection {
+  width: 100%;
+  height: 250px;
+  padding: 30px;
+  padding-top: 5%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    #000;
+  background-size: 40px 40px;
+}
+
+.effectarea {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.box1,
+.box2 {
+  position: absolute;
+  background: #2f00ff;
+  opacity: 0;
+  border-radius: 4px;
+}
+
+.box1 {
+  width: 60px;
+  height: 60px;
+}
+
+.box2 {
+  width: 30px;
+  height: 30px;
+}
+
+@keyframes blink1 {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+}
+
+@keyframes blink2 {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+.smallheading {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #a0a0a0;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.mainheading {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+}
+
+.ctabutton {
+  background-color: #1f1f20;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.ctabutton:hover {
+  background-color: #333;
+}
+@media (max-width: 575.98px) {
+  .herosection {
+    height: auto;
+    padding: 15px;
+    padding-top: 15%;
+  }
+
+  .smallheading {
+    font-size: 10px;
+  }
+
+  .mainheading {
+    font-size: 16px;
+  }
+
+  .ctabutton {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .box1 {
+    width: 35px;
+    height: 35px;
+  }
+
+  .box2 {
+    width: 18px;
+    height: 18px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .herosection {
+    height: auto;
+    padding: 20px;
+    padding-top: 10%;
+  }
+
+  .smallheading {
+    font-size: 11px;
+  }
+
+  .mainheading {
+    font-size: 18px;
+  }
+
+  .ctabutton {
+    padding: 9px 16px;
+    font-size: 15px;
+  }
+
+  .box1 {
+    width: 45px;
+    height: 45px;
+  }
+
+  .box2 {
+    width: 22px;
+    height: 22px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .herosection {
+    padding: 25px;
+    padding-top: 8%;
+  }
+
+  .mainheading {
+    font-size: 20px;
+  }
+
+  .ctabutton {
+    font-size: 16px;
+    padding: 10px 18px;
+  }
+
+  .box1 {
+    width: 50px;
+    height: 50px;
+  }
+
+  .box2 {
+    width: 25px;
+    height: 25px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .herosection {
+    padding: 30px;
+    padding-top: 6%;
+  }
+
+  .mainheading {
+    font-size: 22px;
+  }
+
+  .ctabutton {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .box1 {
+    width: 60px;
+    height: 60px;
+  }
+
+  .box2 {
+    width: 30px;
+    height: 30px;
+  }
+}
