@@ -1,0 +1,73 @@
+/* Existing styles... */
+.stepsContainer{
+  display: flex;
+}
+.stepItem {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+  margin: auto;
+  cursor: pointer;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.stepItem:hover {
+  transform: translateY(-5px);
+}
+
+.stepTitle {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #1c1c1c;
+  margin-top: 0.5rem;
+}
+
+.active {
+  border-bottom: 2px solid #5757f7;
+}
+
+.icon {
+  font-size: 3rem;
+  color: #5757f7;
+}
+
+.stepItem:hover .icon,
+.stepItem:hover .stepTitle {
+  color: #14a3b9 !important;
+  font-weight: 800;
+}
+
+.active .icon,
+.active .stepTitle {
+  color: #14a3b9;
+  font-weight: 800;
+}
+
+/* Optional image container */
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.image {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+.heading{
+  font-size: 3.5rem;
+  font-weight: 800;
+  justify-content: center;
+  display: flex;
+}
+.description{
+  font-size: 1.3rem;
+  justify-content: center;
+  display: flex;
+  padding: 25px 0px;
+  color: #6a6b6c;
+}
