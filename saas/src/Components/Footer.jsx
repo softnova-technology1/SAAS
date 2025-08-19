@@ -39,7 +39,7 @@ const Footer = () => {
                   className={styles.logoImage}
                 />
               </h2>
-              <p>
+              <p className={styles.para}>
                 It is a long established fact that from will be distracted by
                 the readable from when looking.
               </p>
@@ -94,7 +94,7 @@ const Footer = () => {
           {/* Bottom Row */}
           <div className={styles.footerBottom}>
             <div>
-              <p>Copyright © Softnova All Rights</p>
+              <p className={styles.para}>Copyright © Softnova All Rights</p>
             </div>
             <div className={styles.socialIcons}>
               <FaFacebook />
