@@ -1,0 +1,49 @@
+.sliderwrapper {
+  width: 90%;
+  margin: 40px auto;
+}
+
+.slide {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  padding: 20px;
+}
+
+.slide .image {
+  background: #5ea887;
+  border-radius: 10px;
+  padding: 60px 0;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  margin: 0 15px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: scale(0.9);
+  opacity: 0.6;
+}
+
+.slide.center .image {
+  background: #070707;
+  color: orange;
+  transform: scale(1.1) rotateY(0deg);
+  opacity: 1;
+  z-index: 10;
+}
+
+.slide.left-2 .image,
+.slide.left-1 .image {
+  transform: scale(0.9) rotateY(25deg);
+  opacity: 0.8;
+}
+
+.slide.right-1 .image,
+.slide.right-2 .image {
+  transform: scale(0.9) rotateY(-25deg);
+  opacity: 0.8;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
