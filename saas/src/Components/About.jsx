@@ -1,10 +1,4 @@
-// import React from 'react'
 
-// export const About = () => {
-//   return (
-//     <div>About</div>
-//   )
-// }
 
 import React from "react";
 import styles from "../Styles/About.module.css";
