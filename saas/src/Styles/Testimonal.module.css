@@ -30,7 +30,7 @@ figure{
    font-weight: bold;
    text-align: center;
    text-decoration: underline 3px;
-   margin-top: 1%;
+   margin-top: 3%;
 }
 .test2{
   font-weight: bold;
@@ -42,6 +42,7 @@ figure{
    font-size: 16px;
    width: 1000px;
    margin: 0 auto;
+   margin-top: 2%;
 }
 .test4{
    text-align: center;
@@ -62,7 +63,7 @@ figure{
 .Accordian{
     width: 1000px;
     margin: 0 auto;
-    margin-top: 2%;
+    margin-top: 3%;
     
 }
 .Accordian :global(.accordion-button) {

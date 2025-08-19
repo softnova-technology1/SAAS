@@ -96,7 +96,7 @@ const MarqueeDemo = () => {
                 <p className={Styles.test}>Testimonals</p>
                 <h1 className={Styles.test2}>Loved by Thousands</h1>
                 <p className={Styles.test3}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel laudantium cumque voluptatibus? Illo nesciunt tempore, quasi earum harum voluptas animi blanditiis voluptate nam eveniet fugiat.</p>
-                <div className="mb-6">
+                <div className="mb-6 mt-5">
                     <Marquee speed={50} pauseOnHover gradient={false}>
                         {firstRow.map((review, index) => (
                             <ReviewCard key={index} {...review} />
@@ -112,7 +112,7 @@ const MarqueeDemo = () => {
                 </div>
             </div>
             <PopUp />
-            <div className="w-full bg-light dark:bg-gray-900 py-20 overflow-hidden relative">
+            <div className="w-full  py-20 overflow-hidden relative">
                 <p className={Styles.test}>FAQ</p>
                 <h1 className={Styles.test2}>Frequently Asked Questions</h1>
                 <p className={Styles.test3}>Got questions? We've got answers. Here are the most common questions about our pricing and service.</p>
