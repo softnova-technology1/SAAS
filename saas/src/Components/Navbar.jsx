@@ -3,34 +3,7 @@ import styles from "../../src/Styles/Navbar.module.css";
 import logo from '../Image/logo.png';
 import { Link } from "react-router-dom";
 
-const menuItems = [
-  {
-    name: 'home',
-    label: 'Home',
-    href: '#hero',
-    items: ['Home Version 1', 'Home Version 2', 'Home Version 3'],
-  },
-  {
-    name: 'Pages',
-    label: 'Pages',
-    items: ['About', 'Team', 'Pricing'],
-  },
-  {
-    name: 'Projects',
-    label: 'Project',
-    items: ['Project A', 'Project B', 'Project C'],
-  },
-  {
-    name: 'services',
-    label: 'Service',
-    items: ['Design', 'Development', 'SEO'],
-  },
-  {
-    name: 'Blogs',
-    label: 'Blog',
-    items: ['Latest', 'Popular', 'Tutorials'],
-  },
-];
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(null);
@@ -58,34 +31,51 @@ const Navbar = () => {
         </div>
 
         <nav className={styles.menu} ref={menuRef}>
-          {menuItems.map((item) => (
-            <div className={styles.dropdown} key={item.name}>
-              {item.name === "home" ? (
-                <a href="#hero" className={styles.menuItem}>
-                  {item.label} <span className={styles.arrow}>▼</span>
-                </a>
-              ) : (
-                <button
-                  className={styles.menuItem}
-                  onClick={() => handleDropdown(item.name)}
-                >
-                  {item.label} <span className={styles.arrow}>▼</span>
-                </button>
-              )}
-
-              {openMenu === item.name && (
+          <ul>
+            <li>
+              <Link to="/" className={styles.menuItem}>
+                Home
+              </Link>
+            </li>
+            <li className={styles.dropdown}>
+              <button
+                className={styles.menuItem}
+                onClick={() => handleDropdown("about")}
+              >
+                About <span className={styles.arrow}>▼</span>
+              </button>
+              {openMenu === "about" && (
                 <div className={styles.dropdownContent}>
-                  {item.items.map((subItem, i) => (
-                    <div key={i}>{subItem}</div>
-                  ))}
+                  <li><Link to="/About">Team</Link></li>
                 </div>
               )}
-            </div>
-          ))}
-
-          <a href="#contact" className={styles.menuItem}>
-            Contact
-          </a>
+            </li>
+            <li className={styles.dropdown}>
+              <button
+                className={styles.menuItem}
+                onClick={() => handleDropdown("services")}
+              >
+                Services <span className={styles.arrow}>▼</span>
+              </button>
+              {openMenu === "services" && (
+                <div className={styles.dropdownContent}>
+                  <li><Link to="/Team1">Team1</Link></li>
+                  <li><Link to="/Team2">Team2</Link></li>
+                  <li><Link to="/Team3">Team3</Link></li>
+                </div>
+              )}
+            </li>
+            <li>
+              <Link to="/project" className={styles.menuItem}>
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link to="/Contactnav" className={styles.menuItem}>
+                Contact
+              </Link>
+            </li>
+          </ul>
         </nav>
 
 
