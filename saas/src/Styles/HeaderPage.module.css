@@ -8,6 +8,8 @@
   font-family: 'Poppins', sans-serif;
   position: relative;
   overflow: hidden;
+  border-radius: 50px;
+  margin: 3%;
 }
 .badge {
   background: #f0edfd;

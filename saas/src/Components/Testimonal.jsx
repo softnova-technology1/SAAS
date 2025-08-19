@@ -116,8 +116,6 @@ const MarqueeDemo = () => {
                 <p className={Styles.test}>FAQ</p>
                 <h1 className={Styles.test2}>Frequently Asked Questions</h1>
                 <p className={Styles.test3}>Got questions? We've got answers. Here are the most common questions about our pricing and service.</p>
-                <p className={Styles.test3}>Still have questions?</p>
-                <a href=""><p className={Styles.test4}>Contact our Support Team</p></a>
             </div>
             <Accordion className={Styles.Accordian}>
                 <Accordion.Item eventKey="0">
@@ -168,7 +166,7 @@ const MarqueeDemo = () => {
                         culpa qui officia deserunt mollit anim id est laborum.
                     </Accordion.Body>
                 </Accordion.Item>
-                 <Accordion.Item eventKey="4">
+                <Accordion.Item eventKey="4">
                     <Accordion.Header>Accordion Item #1</Accordion.Header>
                     <Accordion.Body>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -217,6 +215,8 @@ const MarqueeDemo = () => {
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
+            <p className={Styles.test3}>Still have questions?</p>
+            <a href=""><p className={Styles.test4}>Contact our Support Team</p></a>
         </>
     );
 };
