@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <>
       <Navbar />
-      <div className={styles.hero}>
+      <div className={styles.hero}id="hero">
         <div className={styles.leftContent}>
           <div className={styles.badges}>
             <span className={styles.subBadge}>

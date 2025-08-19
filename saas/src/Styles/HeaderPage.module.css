@@ -124,7 +124,7 @@ p {
 
 .circleBg {
   position: absolute;
-    scale: 1.9;
+    scale: 1.5;
   /* object-fit:contain; */
   z-index: 0;
 }
@@ -190,4 +190,21 @@ p {
     scale: 1.4;
   }
  
+}
+
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .circleBg{
+    display: none;
+  }
+}
+.phoneImg {
+  content: url('../Image/imgbg.png');
+}
+
+/* Replace only in laptops */
+@media (min-width: 1024px) and (max-width: 1440px)  {
+  .phoneImg {
+    content: url('../Image/mobimg.jpg');
+  }
 }

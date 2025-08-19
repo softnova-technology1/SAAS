@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from "../../src/Styles/Navbar.module.css";
 import logo from '../Image/logo.png';
+import { Link } from "react-router-dom";
+
 const menuItems = [
   {
     name: 'home',
     label: 'Home',
+    href: '#hero',
     items: ['Home Version 1', 'Home Version 2', 'Home Version 3'],
   },
   {
@@ -29,7 +32,7 @@ const menuItems = [
   },
 ];
 const Navbar = () => {
- const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(null);
   const menuRef = useRef(null);
   const handleDropdown = (menu) => {
@@ -47,67 +50,75 @@ const Navbar = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
   return (
-   <>
-    <header className={styles.navbar}>
-      <div className={styles.logoArea}>
-        <img src={logo} alt="Logo" className={styles.logo} />
-        <span className={styles.logoText}><strong>Soft</strong>Nova</span>
-      </div>
+    <>
+      <header className={styles.navbar}>
+        <div className={styles.logoArea}>
+          <img src={logo} alt="Logo" className={styles.logo} />
+          <span className={styles.logoText}><strong>Soft</strong>Nova</span>
+        </div>
 
-      <nav className={styles.menu} ref={menuRef}>
-        {menuItems.map((item) => (
-          <div className={styles.dropdown} key={item.name}>
-            <button
-              className={styles.menuItem}
-              onClick={() => handleDropdown(item.name)}
-            >
-              {item.label} <span className={styles.arrow}>▼</span>
-            </button>
-            {openMenu === item.name && (
-              <div className={styles.dropdownContent}>
-                {item.items.map((subItem, i) => (
-                  <div key={i}>{subItem}</div>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
-        <a href="#contact" className={styles.menuItem}>
-          Contact
-        </a>
-      </nav>
+        <nav className={styles.menu} ref={menuRef}>
+          {menuItems.map((item) => (
+            <div className={styles.dropdown} key={item.name}>
+              {item.name === "home" ? (
+                <a href="#hero" className={styles.menuItem}>
+                  {item.label} <span className={styles.arrow}>▼</span>
+                </a>
+              ) : (
+                <button
+                  className={styles.menuItem}
+                  onClick={() => handleDropdown(item.name)}
+                >
+                  {item.label} <span className={styles.arrow}>▼</span>
+                </button>
+              )}
+
+              {openMenu === item.name && (
+                <div className={styles.dropdownContent}>
+                  {item.items.map((subItem, i) => (
+                    <div key={i}>{subItem}</div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+
+          <a href="#contact" className={styles.menuItem}>
+            Contact
+          </a>
+        </nav>
 
 
-      <div className={styles.actions}>
-        <button className={styles.searchIcon}>🔍</button>
-        <button className={styles.cta}>Get Started →</button>
-      </div>
-    </header>
-    <header className={styles.header} >
-      <div className={styles.logo}>
-        <div className={styles.logoIcon}>S</div>
-        <span className={styles.logoText}>softNova</span>
-      </div>
+        <div className={styles.actions}>
+          <button className={styles.searchIcon}>🔍</button>
+          <button className={styles.cta}>Get Started →</button>
+        </div>
+      </header>
+      <header className={styles.header} >
+        <div className={styles.logo}>
+          <div className={styles.logoIcon}>S</div>
+          <span className={styles.logoText}>softNova</span>
+        </div>
 
-      <div
-        className={styles.hamburger}
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        &#9776;
-      </div>
+        <div
+          className={styles.hamburger}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          &#9776;
+        </div>
 
-      <nav className={`${styles.mobileMenu} ${menuOpen ? styles.show : ""}`}>
-        <ul>
-          <li>Home <span>+</span></li>
-          <li>Pages <span>+</span></li>
-          <li>Project <span>+</span></li>
-          <li>Services <span>+</span></li>
-          <li>Blog <span>+</span></li>
-          <li>Contact</li>
-        </ul>
-      </nav>
-    </header>
-   </>
+        <nav className={`${styles.mobileMenu} ${menuOpen ? styles.show : ""}`}>
+          <ul>
+            <li>Home <span>+</span></li>
+            <li>Pages <span>+</span></li>
+            <li>Project <span>+</span></li>
+            <li>Services <span>+</span></li>
+            <li>Blog <span>+</span></li>
+            <li>Contact <span>+</span></li>
+          </ul>
+        </nav>
+      </header>
+    </>
   );
 };
 
