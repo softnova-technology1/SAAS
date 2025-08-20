@@ -1,10 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom"; // ✅ Only Link
+import { Link } from "react-router-dom"; 
 import styles from "../../src/Styles/Navbar.module.css";
 import logo from "../Image/logo.png";
 
 const Navbar = () => {
+const [openDropdown, setOpenDropdown] = useState(null);
 
+  const toggleDropdown = (name) => {
+    setOpenDropdown(openDropdown === name ? null : name);
+  };
   const timeoutRef = useRef(null);
 
   const handleDropdownOpen = (menu) => {
@@ -15,7 +19,7 @@ const Navbar = () => {
   const handleDropdownClose = () => {
     timeoutRef.current = setTimeout(() => {
       setOpenMenu(null);
-    }, 200); // delay prevents accidental close
+    }, 200); 
   };
 
   const handleDropdownToggle = (menu) => {
@@ -42,25 +46,44 @@ const Navbar = () => {
   }, []);
 
   const menuItems = [
-    { name: "home", label: "Home", link: "/" },
+    { name: "home", 
+      label: "Home", 
+      link: "/" 
+    },
     {
       name: "about",
       label: "About",
       link: "/About",
-      items: [{ label: "Team", link: "#" }],
+      items: [
+        { label: "Team",
+         link: "/Team" 
+        }
+      ],
     },
     {
       name: "services",
       label: "Services",
-      link: "#",
+      link: "/Service",
       items: [
-        { label: "Team1", link: "/Team1" },
-        { label: "Team2", link: "/Team2" },
-        { label: "Team3", link: "/Team3" },
+        { label: "Service1",
+           link: "/Team1"
+        },
+        { label: "Service2", 
+          link: "/Team2" 
+        },
+        { label: "Service3",
+           link: "/Team3" 
+        },
       ],
     },
-    { name: "projects", label: "Projects", link: "/project" },
-    { name: "contact", label: "Contact", link: "/Contactnav" },
+    { name: "projects", 
+      label: "Projects", 
+      link: "/project" 
+    },
+    { name: "contact", 
+      label: "Contact", 
+      link: "/Contactnav" 
+    }
   ];
 
   return (
@@ -177,20 +200,36 @@ const Navbar = () => {
         </div>
 
         <nav className={`${styles.mobileMenu} ${menuOpen ? styles.show : ""}`}>
-          <ul>
-            {menuItems.map((item) => (
-              <li key={item.name}>
-                {item.href ? (
-                  <a href={item.href}>{item.label}</a>
-                ) : (
-                  <Link to={item.link}>{item.label}</Link>
-                )}
-                {item.items && <span>+</span>}
-              </li>
-            ))}
+      <ul>
+        {menuItems.map((item) => (
+          <li key={item.name}>
+            {/* Top-level link */}
+            <Link to={item.link}>{item.label}</Link>
 
-          </ul>
-        </nav>
+            {/* Show "+" if item has children */}
+            {item.items && (
+              <span
+                className={styles.plus}
+                onClick={() => toggleDropdown(item.name)}
+              >
+                {openDropdown === item.name ? "−" : "+"}
+              </span>
+            )}
+
+            {/* Dropdown content */}
+            {item.items && openDropdown === item.name && (
+              <ul className={styles.subMenu}>
+                {item.items.map((sub, index) => (
+                  <li key={index}>
+                    <Link to={sub.link}>{sub.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
       </header>
     </>
   );

@@ -52,7 +52,7 @@
   margin-top: 5%;
 }
 .rate {
-  padding-left: 10%;
+  padding-left: 4%;
   font-size: 1.5rem;
 }
 .rightline {
@@ -101,8 +101,8 @@ p {
 }
 
 .avatar {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   margin-right: -10px;
   border: 2px solid white;
@@ -135,7 +135,7 @@ p {
     display: block;
   }
   .rightline {
-    border-right: none;
+    display: none;
   }
   .rightImage {
     display: none !important;
@@ -164,9 +164,6 @@ p {
   .hero {
     display: block;
   }
-  .rightImage {
-    width: 100%;
-  }
   .phoneImg {
     width: 100%;
     scale: 1;
@@ -185,18 +182,33 @@ p {
   .circleBg {
     scale: 1.4;
   }
-}
 
+}
+@media(max-width:768px){
+ .circleBg {
+    display: none;
+  }
+  .phoneImg {
+    content: url("../Image/imgbg.png") !important;
+    width: 500px;
+    display: block;
+    animation: float 4s ease-in-out infinite;
+  }
+}
 @media (min-width: 1024px) and (max-width: 1440px) {
   .circleBg {
     display: none;
+  }
+  .phoneImg {
+    content: url("../images/saas-removebg-preview.png");
+    width: 500px;
+    display: block;
+    animation: float 4s ease-in-out infinite;
   }
 }
 .phoneImg {
   content: url("../Image/imgbg.png");
 }
-
-/* Replace only in laptops */
 @media (min-width: 1024px) and (max-width: 1440px) {
   .phoneImg {
     content: url("../images/saas-removebg-preview.png");
@@ -204,17 +216,15 @@ p {
     display: block;
     animation: float 4s ease-in-out infinite;
   }
-
-  /* Smooth floating up & down */
   @keyframes float {
     0% {
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-20px); /* move up slowly */
+      transform: translateY(-20px); 
     }
     100% {
-      transform: translateY(0); /* back to normal */
+      transform: translateY(0); 
     }
   }
   .title {
