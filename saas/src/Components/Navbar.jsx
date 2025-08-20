@@ -4,6 +4,24 @@ import styles from "../../src/Styles/Navbar.module.css";
 import logo from "../Image/logo.png";
 
 const Navbar = () => {
+
+  const timeoutRef = useRef(null);
+
+  const handleDropdownOpen = (menu) => {
+    clearTimeout(timeoutRef.current);
+    setOpenMenu(menu);
+  };
+
+  const handleDropdownClose = () => {
+    timeoutRef.current = setTimeout(() => {
+      setOpenMenu(null);
+    }, 200); // delay prevents accidental close
+  };
+
+  const handleDropdownToggle = (menu) => {
+    setOpenMenu(openMenu === menu ? null : menu);
+  };
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(null);
   const menuRef = useRef(null);
@@ -44,7 +62,7 @@ const Navbar = () => {
     { name: "projects", label: "Projects", link: "/project" },
     { name: "contact", label: "Contact", link: "/Contactnav" },
   ];
-  
+
   return (
     <>
       {/* --- Desktop Navbar --- */}
@@ -63,39 +81,65 @@ const Navbar = () => {
                 Home
               </Link>
             </li>
-            <li className={styles.dropdown}>
-              <button
-                className={styles.menuItem}
-                onClick={() => handleDropdown("about")}
+            <li
+              className={styles.dropdown}
+              onMouseLeave={handleDropdownClose}
+            >
+              <Link to="/About" className={styles.menuItem}>
+                About
+              </Link>
+              <span
+                className={styles.arrow}
+                onMouseEnter={() => handleDropdownOpen("about")}
+                onClick={() => handleDropdownToggle("about")}
               >
-                About <span className={styles.arrow}>▼</span>
-              </button>
+                ▼
+              </span>
               {openMenu === "about" && (
-                <div className={styles.dropdownContent}>
-                  <li>
-                    <Link to="/About">Team</Link>
-                  </li>
+                <div
+                  className={styles.dropdownContent}
+                  onMouseEnter={() => handleDropdownOpen("about")}
+                >
+                  <ul>
+                    <li>
+                      <Link to="/Team">Team</Link>
+                    </li>
+                  </ul>
                 </div>
               )}
             </li>
-            <li className={styles.dropdown}>
-              <button
-                className={styles.menuItem}
-                onClick={() => handleDropdown("services")}
+               <li
+              className={styles.dropdown}
+              onMouseLeave={handleDropdownClose}
+            >
+              <Link to="/Service" className={styles.menuItem}>
+                Service
+              </Link>
+              <span
+                className={styles.arrow}
+                onMouseEnter={() => handleDropdownOpen("services")}
+                onClick={() => handleDropdownToggle("services")}
               >
-                Services <span className={styles.arrow}>▼</span>
-              </button>
+                ▼
+              </span>
               {openMenu === "services" && (
-                <div className={styles.dropdownContent}>
-                  <li>
-                    <Link to="/Team1">Team1</Link>
+                <div
+                  className={styles.dropdownContent}
+                  onMouseEnter={() => handleDropdownOpen("services")}
+                >
+                  <ul>
+                    <li>
+                      <li>
+                    <Link to="/Team1">Service1</Link>
                   </li>
                   <li>
-                    <Link to="/Team2">Team2</Link>
+                    <Link to="/Team2">Service2</Link>
                   </li>
                   <li>
-                    <Link to="/Team3">Team3</Link>
+                    <Link to="/Team3">Service3</Link>
                   </li>
+                    </li>
+                  </ul>
                 </div>
               )}
             </li>
@@ -144,9 +188,7 @@ const Navbar = () => {
                 {item.items && <span>+</span>}
               </li>
             ))}
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
+
           </ul>
         </nav>
       </header>

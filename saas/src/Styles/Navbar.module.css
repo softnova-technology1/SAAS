@@ -18,8 +18,6 @@
 
 .menu ul {
   display: flex;
-  justify-content: center; 
-  align-items: center;
   gap: 40px; 
   list-style: none;
   margin: 0;
@@ -331,4 +329,7 @@ a{
   .mobileMenu {
     display: none !important;
   }
+}
+ul li::before {
+  content: "" !important;
 }
