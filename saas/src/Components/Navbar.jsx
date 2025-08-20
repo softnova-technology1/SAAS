@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link } from "react-router-dom";   // ✅ Only Link
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom"; // ✅ Only Link
 import styles from "../../src/Styles/Navbar.module.css";
-import logo from '../Image/logo.png';
-
+import logo from "../Image/logo.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,17 +19,41 @@ const Navbar = () => {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const menuItems = [
+    { name: "home", label: "Home", link: "/" },
+    {
+      name: "about",
+      label: "About",
+      link: "/About",
+      items: [{ label: "Team", link: "#" }],
+    },
+    {
+      name: "services",
+      label: "Services",
+      link: "#",
+      items: [
+        { label: "Team1", link: "/Team1" },
+        { label: "Team2", link: "/Team2" },
+        { label: "Team3", link: "/Team3" },
+      ],
+    },
+    { name: "projects", label: "Projects", link: "/project" },
+    { name: "contact", label: "Contact", link: "/Contactnav" },
+  ];
+  
   return (
     <>
       {/* --- Desktop Navbar --- */}
       <header className={styles.navbar}>
         <div className={styles.logoArea}>
           <img src={logo} alt="Logo" className={styles.logo} />
-          <span className={styles.logoText}><strong>Soft</strong>Nova</span>
+          <span className={styles.logoText}>
+            <strong>Soft</strong>Nova
+          </span>
         </div>
 
         <nav className={styles.menu} ref={menuRef}>
@@ -49,7 +72,9 @@ const Navbar = () => {
               </button>
               {openMenu === "about" && (
                 <div className={styles.dropdownContent}>
-                  <li><Link to="/About">Team</Link></li>
+                  <li>
+                    <Link to="/About">Team</Link>
+                  </li>
                 </div>
               )}
             </li>
@@ -62,9 +87,15 @@ const Navbar = () => {
               </button>
               {openMenu === "services" && (
                 <div className={styles.dropdownContent}>
-                  <li><Link to="/Team1">Team1</Link></li>
-                  <li><Link to="/Team2">Team2</Link></li>
-                  <li><Link to="/Team3">Team3</Link></li>
+                  <li>
+                    <Link to="/Team1">Team1</Link>
+                  </li>
+                  <li>
+                    <Link to="/Team2">Team2</Link>
+                  </li>
+                  <li>
+                    <Link to="/Team3">Team3</Link>
+                  </li>
                 </div>
               )}
             </li>
